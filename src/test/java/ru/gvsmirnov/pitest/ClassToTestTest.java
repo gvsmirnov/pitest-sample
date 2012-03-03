@@ -10,7 +10,10 @@ import org.junit.Test;
 public class ClassToTestTest {
     @Test
     public void testThreshold() {
-        Assert.assertTrue(ClassToTest.threshold(10.0));
-        Assert.assertFalse(ClassToTest.threshold(9.0));
+
+        ClassToTest classToTest = new ClassToTest(10.0);
+
+        Assert.assertTrue(classToTest.threshold(11.0));
+        Assert.assertFalse(classToTest.threshold(10.0));
     }
 }
