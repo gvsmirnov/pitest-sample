@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.gvsmirnov</groupId>
+    <artifactId>pitest-sample</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>Sample project utilizing pitest</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>LATEST</version>
+                <configuration>
+                    <inScopeClasses>
+                        <param>com.your.package.root*</param>
+                    </inScopeClasses>
+                    <targetClasses>
+                        <param>com.your.package.root.want.to.mutate*</param>
+                    </targetClasses>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
